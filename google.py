@@ -83,6 +83,7 @@ def generate_maps():
                     color_continuous_scale=px.colors.diverging.BrBG,
                     color_continuous_midpoint=0,
                     title="Google Trend 2020 ") 
+    fig.write_html("/Users/afajri/file.html")
     fig.show()
 
 if __name__ == "__main__":
