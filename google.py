@@ -14,9 +14,12 @@ google_trend_url = "https://trends.google.com/trends/yis/2020/"
 
 options = Options()
 options.headless = True
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
 options.add_argument("--window-size=1920,1200")
 
-driver = webdriver.Chrome(options=options, executable_path=r'/Users/afajri/Downloads/chromedriver')
+driver = webdriver.Chrome(options=options, executable_path=r'/usr/bin/chromedriver')
 
 filename = "data.csv"
 no_data = []
@@ -83,7 +86,7 @@ def generate_maps():
                     color_continuous_scale=px.colors.diverging.BrBG,
                     color_continuous_midpoint=0,
                     title="Google Trend 2020 ") 
-    fig.write_html("/Users/afajri/file.html")
+    fig.write_html("/var/www/html/2020.html")
     fig.show()
 
 if __name__ == "__main__":
